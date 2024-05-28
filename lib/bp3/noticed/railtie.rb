@@ -24,11 +24,27 @@ module Bp3
                 # has_paper_trail
 
                 def recipient_attributes_for(recipient)
-                  # TODO: determine why workspaces_workspace_id is not set, but tenant_id is
-                  super.merge({ workspaces_workspace_id: global_workspace_id })
+                  # TODO: determine why this is needed, since global state and Tenantable should take care of this
+                  super.merge(global_scope)
                 end
 
                 private
+
+                def global_scope
+                  { # TODO: determine why only workspace needs to be provided to make it work
+                    # sites_site_id: global_site_id,
+                    # tenant_id: global_tenant_id,
+                    workspaces_workspace_id: global_workspace_id
+                  }
+                end
+
+                def global_site_id
+                  global_request_state_class.current_site_id
+                end
+
+                def global_tenant_id
+                  global_request_state_class.current_tenant_id
+                end
 
                 def global_workspace_id
                   global_request_state_class.current_workspace_id
