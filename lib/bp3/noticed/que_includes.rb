@@ -10,7 +10,7 @@ module QueIncludes
         Rails.logger.warn { GlobalRequestState.to_hash }
       end
       kwargs['state'] = GlobalRequestState.to_hash
-      super(*args, **kwargs)
+      super
     end
 
     def perform_now(...)

@@ -12,7 +12,7 @@ module PrependPerform
     args = remove_state(args)
     kwargs = remove_state(kwargs)
     begin
-      super(*args, **kwargs)
+      super
     rescue ArgumentError
       super() # in case super is relying on run_attrs
     end

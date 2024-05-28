@@ -21,11 +21,11 @@ module JobIncludes
     end
   end
 
-  def enqueue(*args, **kwargs)
+  def enqueue(*, **)
     # Add state to arguments, not kwargs
     # kwargs['state'] = GlobalRequestState.to_hash
     arguments << { 'state' => global_request_state_class.to_hash }
-    super(*args, **kwargs)
+    super
   end
 
   private
