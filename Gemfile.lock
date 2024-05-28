@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/persuavis/bp3-action_dispatch
+  revision: b824a9aa8209d74c9ca3b817fd0fecd391bafe90
+  specs:
+    bp3-action_dispatch (0.1.0)
+      actionpack (>= 7.1.2, < 8)
+      activesupport (>= 7.1.2, < 8)
+      i18n (>= 1.8.11, < 2)
+
+GIT
   remote: https://github.com/persuavis/bp3-core
   revision: 67a2745c52dc04f884109e040f5fe93de7d76778
   specs:
@@ -246,6 +255,7 @@ PLATFORMS
   x86_64-darwin-22
 
 DEPENDENCIES
+  bp3-action_dispatch!
   bp3-core!
   bp3-noticed!
   byebug
