@@ -7,6 +7,16 @@ module CommonIncludes
     attr_reader :args, :kwargs
   end
 
+  class_methods do
+    def global_request_state_class
+      Bp3::Core::Rqid.global_request_state_class
+    end
+  end
+
+  def global_request_state_class
+    Bp3::Core::Rqid.global_request_state_class
+  end
+
   def run(...)
     perform(...)
   end
@@ -37,10 +47,6 @@ module CommonIncludes
 
   def site_class
     Bp3::ActionDispatch.site_class
-  end
-
-  def global_request_state_class
-    Bp3::Core::Rqid.global_request_state_class
   end
 
   def check(hash_or_array, key)

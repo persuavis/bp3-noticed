@@ -2,6 +2,7 @@
 
 module PrependPerform
   include CommonIncludes
+
   # rubocop:disable Metrics/MethodLength
   def perform(*args, **kwargs)
     @args = args
@@ -69,9 +70,5 @@ module PrependPerform
     message = "Warning: #{self.class.name}#log_exception: unable to log exception #{exception}/#{key}/#{details}"
     Rails.logger.warn { message }
     nil
-  end
-
-  def global_request_state_class
-    Bp3::Core::Rqid.global_request_state_class
   end
 end

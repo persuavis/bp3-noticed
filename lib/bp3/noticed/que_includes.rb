@@ -7,9 +7,9 @@ module QueIncludes
     def enqueue(*args, **kwargs)
       if ENV.fetch('BP_DEBUG', nil) =~ /quejobs/
         Rails.logger.warn { "enqueue with #{args} and #{kwargs}" }
-        Rails.logger.warn { GlobalRequestState.to_hash }
+        Rails.logger.warn { global_request_state_class.to_hash }
       end
-      kwargs['state'] = GlobalRequestState.to_hash
+      kwargs['state'] = global_request_state_class.to_hash
       super
     end
 
