@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors = ['Wim den Braven']
   spec.email = ['wimdenbraven@persuavis.com']
 
-  spec.summary = 'bp3-noticed.'
+  spec.summary = 'bp3-noticed adapts noticed for BP3 (persuavis/black_phoebe_3).'
   # spec.description = "TODO: Write a longer description or delete this line."
   spec.homepage = 'https://www.black-phoebe.com'
   spec.license = 'MIT'
@@ -31,7 +31,7 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  # spec.add_dependency 'bp3-core', '~> 7.1' # TODO: remove from gemfile
+  spec.add_dependency 'bp3-core', ['>= 0.1', '< 1']
   spec.add_dependency 'noticed', '~> 2.2'
 
   spec.add_development_dependency 'byebug'

@@ -7,17 +7,11 @@ GIT
       activesupport (>= 7.1.2, < 8)
       i18n (>= 1.8.11, < 2)
 
-GIT
-  remote: https://github.com/persuavis/bp3-core
-  revision: 67a2745c52dc04f884109e040f5fe93de7d76778
-  specs:
-    bp3-core (0.1.0)
-      activesupport (>= 7.1.2, < 8)
-
 PATH
   remote: .
   specs:
     bp3-noticed (0.1.0)
+      bp3-core (>= 0.1, < 1)
       noticed (~> 2.2)
 
 GEM
@@ -100,6 +94,9 @@ GEM
     ast (2.4.2)
     base64 (0.2.0)
     bigdecimal (3.1.8)
+    bp3-core (0.1.2)
+      actionview (>= 7.1.2, < 8)
+      activesupport (>= 7.1.2, < 8)
     builder (3.2.4)
     byebug (11.1.3)
     concurrent-ruby (1.2.3)
@@ -256,7 +253,6 @@ PLATFORMS
 
 DEPENDENCIES
   bp3-action_dispatch!
-  bp3-core!
   bp3-noticed!
   byebug
   rake (~> 13.0)
@@ -266,4 +262,4 @@ DEPENDENCIES
   rubocop-rspec (~> 2.25)
 
 BUNDLED WITH
-   2.4.22
+   2.5.11
