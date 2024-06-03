@@ -69,7 +69,6 @@ module Bp3
                 # include Que::ActiveJob::JobExtensions
                 include CommonIncludes
                 include JobIncludes
-                # include SystemLogs
 
                 # Automatically retry jobs that encountered a deadlock
                 retry_on ActiveRecord::Deadlocked
