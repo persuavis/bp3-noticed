@@ -31,9 +31,9 @@ module Bp3
                 private
 
                 def global_scope
-                  { # TODO: determine why only workspace needs to be provided to make it work
-                    # sites_site_id: global_site_id,
-                    # tenant_id: global_tenant_id,
+                  {
+                    sites_site_id: global_site_id,
+                    tenant_id: global_tenant_id,
                     workspaces_workspace_id: global_workspace_id
                   }
                 end
