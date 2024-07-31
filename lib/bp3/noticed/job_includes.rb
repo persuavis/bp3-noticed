@@ -34,14 +34,6 @@ module JobIncludes
     'job'
   end
 
-  def include_log_error(key:, message:, details: {})
-    return log_error(key:, message:, details:) if respond_to?(:log_error, true)
-
-    message = "Warning: #{self.class.name}#log_info: unable to log error #{key}/#{message}/#{details}"
-    Rails.logger.warn { message }
-    nil
-  end
-
   def run_attrs(key)
     check(arguments, key)
   end
