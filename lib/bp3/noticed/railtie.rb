@@ -67,19 +67,19 @@ module Bp3
 
               class ApplicationJob
                 # include Que::ActiveJob::JobExtensions
-                include CommonIncludes
-                include JobIncludes
+                include Bp3::Noticed::CommonIncludes
+                include Bp3::Noticed::JobIncludes
 
                 # Automatically retry jobs that encountered a deadlock
                 retry_on ActiveRecord::Deadlocked
               end
 
               class EventJob
-                prepend PrependPerform
+                prepend Bp3::Noticed::PrependPerform
               end
 
               class DeliveryMethod
-                prepend PrependPerform
+                prepend Bp3::Noticed::PrependPerform
               end
             end
           end
