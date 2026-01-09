@@ -35,6 +35,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'bp3-action_dispatch', '>= 0.1'
   spec.add_dependency 'bp3-core', '>= 0.1'
   spec.add_dependency 'noticed', '>= 2.2'
+  #  spec.add_dependency 'googleauth', '~> 0.4' # add this and enable Fcm delivery method once it supports newer gems
+  spec.add_dependency 'apnotic', '~> 1'
 
   spec.add_development_dependency 'byebug'
   spec.add_development_dependency 'rake', '>= 13.0'
