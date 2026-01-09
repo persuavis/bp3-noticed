@@ -4,6 +4,21 @@
 
 module Bp3
   module Noticed
+    NOTICED_DELIVERY_METHODS = %w[
+      ActionCable
+      ActionPushNative
+      Discord
+      Email
+      Ios
+      MicrosoftTeams
+      Slack
+      Test
+      TwilioMessaging
+      VonageSms
+      Webhook
+    ].freeze
+    # TODO: add Fcm and add googleauth depency once googleauth supports newer gems
+
     if defined?(Rails.env)
       class Railtie < Rails::Railtie
         # rubocop:disable Metrics/BlockLength
@@ -86,6 +101,19 @@ module Bp3
               class DeliveryMethod
                 prepend Bp3::Noticed::PrependPerform
                 include Bp3::Core::SystemLogs
+              end
+
+              NOTICED_DELIVERY_METHODS.each do |delivery_method|
+                class_name = "::Noticed::DeliveryMethods::#{delivery_method}"
+                klass = begin
+                  class_name.constantize
+                rescue StandardError
+                  nil
+                end
+                next unless klass
+
+                klass.prepend Bp3::Noticed::PrependPerform
+                klass.include Bp3::Core::SystemLogs
               end
             end
           end
