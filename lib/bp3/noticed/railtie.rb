@@ -6,6 +6,7 @@ module Bp3
   module Noticed
     if defined?(Rails.env)
       class Railtie < Rails::Railtie
+        # rubocop:disable Metrics/BlockLength
         initializer 'bp3.noticed.railtie.register' do |app|
           app.config.after_initialize do
             ::Noticed::Event # preload
@@ -69,6 +70,7 @@ module Bp3
 
               class ApplicationJob
                 # include Que::ActiveJob::JobExtensions
+                include Bp3::Core::SystemLogs
                 include Bp3::Noticed::CommonIncludes
                 include Bp3::Noticed::JobIncludes
 
@@ -78,14 +80,17 @@ module Bp3
 
               class EventJob
                 prepend Bp3::Noticed::PrependPerform
+                include Bp3::Core::SystemLogs
               end
 
               class DeliveryMethod
                 prepend Bp3::Noticed::PrependPerform
+                include Bp3::Core::SystemLogs
               end
             end
           end
         end
+        # rubocop:enable Metrics/BlockLength
       end
     end
   end
