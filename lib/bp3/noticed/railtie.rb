@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# require 'rails/railtie'
-
 module Bp3
   module Noticed
     NOTICED_DELIVERY_METHODS = %w[
@@ -19,7 +17,10 @@ module Bp3
     ].freeze
     # TODO: add Fcm and add googleauth depency once googleauth supports newer gems
 
-    if defined?(Rails.env)
+    # Define the Railtie only if Rails is already loaded
+    # Use defined?(Rails) instead of defined?(Rails.env) or defined?(Rails::Railtie)
+    # because those may not be accessible when this file is first loaded
+    if defined?(Rails)
       class Railtie < Rails::Railtie
         # rubocop:disable Metrics/BlockLength
         initializer 'bp3.noticed.railtie.register' do |app|
