@@ -1,6 +1,8 @@
 plugins:
   - rubocop-rake
   - rubocop-rspec
+  - rubocop-rails
+  - rubocop-rspec_rails
 
 AllCops:
   TargetRubyVersion: 3.2.2
