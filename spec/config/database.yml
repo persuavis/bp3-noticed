@@ -1,0 +1,6 @@
+# SQLite. Versions 3.8.0 and up are supported.
+test:
+  adapter: sqlite3
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  database: ":memory:"
