@@ -10,12 +10,12 @@ module Bp3
       end
 
       class_methods do
-        def global_request_state_class
+        def global_request_state_class # rubocop:disable Rails/Delegate
           Bp3::Core::Rqid.global_request_state_class
         end
       end
 
-      def global_request_state_class
+      def global_request_state_class # rubocop:disable Rails/Delegate
         Bp3::Core::Rqid.global_request_state_class
       end
 

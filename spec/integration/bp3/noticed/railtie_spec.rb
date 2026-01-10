@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Bp3::Noticed::Railtie Integration', type: :none do
+RSpec.describe Bp3::Noticed::Railtie, type: :none do
   describe 'Noticed::Event modifications' do
     it 'includes Bp3::Core::Rqid module' do
       # Check by name since module identity might differ
@@ -118,7 +118,7 @@ RSpec.describe 'Bp3::Noticed::Railtie Integration', type: :none do
   describe 'Noticed delivery method classes' do
     # Test a few common delivery methods that should exist
     %w[Test Email].each do |delivery_method|
-      context "Noticed::DeliveryMethods::#{delivery_method}" do
+      context "with Noticed::DeliveryMethods::#{delivery_method}" do
         let(:klass) { "Noticed::DeliveryMethods::#{delivery_method}".constantize }
 
         it 'prepends Bp3::Noticed::PrependPerform module' do
