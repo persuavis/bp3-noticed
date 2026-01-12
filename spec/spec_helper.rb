@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-require 'bp3/noticed'
+# NOTE: This spec_helper is for unit tests that don't need Rails.
+# For integration tests that need Rails (like railtie tests), use rails_helper.rb instead.
+# Do NOT require 'bp3/noticed' here, as that would load the railtie before Rails is available.
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

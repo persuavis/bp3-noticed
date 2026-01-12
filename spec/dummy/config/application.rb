@@ -16,9 +16,6 @@ require 'bp3/action_dispatch'
 require 'noticed'
 require 'bp3/noticed'
 
-# Explicitly load the railtie now that Rails is available
-require 'bp3/noticed/railtie'
-
 module Dummy
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
