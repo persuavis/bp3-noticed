@@ -78,6 +78,7 @@ module Bp3
                 include Bp3::Core::Sqnr
                 include Bp3::Core::Tenantable
                 include Bp3::Core::Ransackable
+                include Bp3::Core::Displayable
 
                 configure_tenancy
                 use_sqnr_for_ordering

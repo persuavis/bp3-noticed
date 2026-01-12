@@ -58,6 +58,10 @@ RSpec.describe Bp3::Noticed::Railtie, type: :none do
       expect(Noticed::Notification.ancestors).to include(Bp3::Core::Ransackable)
     end
 
+    it 'includes Bp3::Noticed::Displayable module' do
+      expect(Noticed::Notification.ancestors).to include(Bp3::Core::Displayable)
+    end
+
     it 'responds to configure_tenancy' do
       expect(Noticed::Notification).to respond_to(:configure_tenancy)
     end
