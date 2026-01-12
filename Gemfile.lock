@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bp3-noticed (0.2.1)
+    bp3-noticed (0.3.0)
       activesupport (~> 8.1)
       apnotic (~> 1)
       bp3-action_dispatch (>= 0.1)
