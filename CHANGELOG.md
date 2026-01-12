@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.3.1] - 2026-01-12
+
+- Update bp3-action_dispatch gem
+
 ## [0.3.0] - 2026-01-12
 
 - Include Displayable
