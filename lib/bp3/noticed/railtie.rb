@@ -24,7 +24,7 @@ module Bp3
       class Railtie < Rails::Railtie
         # rubocop:disable Metrics/BlockLength
         initializer 'bp3.noticed.railtie.register' do |app|
-          app.config.after_initialize do
+          app.config.to_prepare do
             ::Noticed::Event # preload
             ::Noticed::Notification # preload
             ::Noticed::ApplicationJob # preload
@@ -41,8 +41,9 @@ module Bp3
                 use_sqnr_for_ordering
                 # has_paper_trail
 
+                # override recipient_attributes_for to ensure that bulk inserts
+                # (which skip callbacks) have site, tenant and workspace
                 def recipient_attributes_for(recipient)
-                  # TODO: determine why this is needed, since global state and Tenantable should take care of this
                   super.merge(global_scope)
                 end
 
