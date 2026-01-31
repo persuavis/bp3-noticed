@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+## [0.3.2] - 2026-01-31
+
+- Use config.to_prepare for railtie reload
+- Update gems
+
 ## [0.3.1] - 2026-01-12
 
 - Update bp3-action_dispatch gem
