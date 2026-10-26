@@ -22,7 +22,7 @@ module Bp3
     # because those may not be accessible when this file is first loaded
     if defined?(Rails)
       class Railtie < Rails::Railtie
-        # rubocop:disable Metrics/BlockLength
+        # rubocop:disable-next Metrics/BlockLength
         initializer 'bp3.noticed.railtie.register' do |app|
           app.config.to_prepare do
             ::Noticed::Event # preload
@@ -121,7 +121,6 @@ module Bp3
             end
           end
         end
-        # rubocop:enable Metrics/BlockLength
       end
     end
   end

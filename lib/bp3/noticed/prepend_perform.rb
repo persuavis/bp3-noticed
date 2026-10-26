@@ -5,7 +5,7 @@ module Bp3
     module PrependPerform
       include CommonIncludes
 
-      # rubocop:disable Metrics/MethodLength
+      # rubocop:disable-next Metrics/MethodLength
       def perform(*args, **kwargs)
         @args = args
         @kwargs = kwargs
@@ -30,7 +30,6 @@ module Bp3
         prepend_add_event(eventable: log, disposition:)
         global_request_state_class.clear!
       end
-      # rubocop:enable Metrics/MethodLength
 
       private
 
