@@ -32,15 +32,6 @@ In every custom job class that inherits from `ApplicationJob`:
 ```ruby
 prepend Bp3::Noticed::PrependPerform
 ```
-If there is que job class (outside of ActiveJob), inheriting from `Que::Job`:
-```ruby
-include Bp3::Noticed::CommonIncludes
-include Bp3::Noticed::QueIncludes
-```
-In every custom job class that inherits from that que job class`:
-```ruby
-prepend Bp3::Noticed::PrependPerform
-```
 
 ## Development
 

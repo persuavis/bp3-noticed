@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+- Remove QueIncludes, as Que is no longer supported
+
 ## [0.3.2] - 2026-01-31
 
 - Use config.to_prepare for railtie reload
