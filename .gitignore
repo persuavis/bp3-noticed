@@ -20,3 +20,5 @@
 
 # Ignore AI files
 .claude
+
+.ruby-version
